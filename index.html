@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C.A Gayrimenkul | Cansu Akgün</title>
+<meta name="description" content="C.A Gayrimenkul - Cansu Akgün güvencesiyle Sultanbeyli, Pendik, Tuzla ve Sancaktepe'de satılık, kiralık ve kat karşılığı gayrimenkul danışmanlığı.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%23121212'/%3E%3Ctext x='32' y='40' font-family='Georgia,serif' font-size='24' fill='%23C5A059' text-anchor='middle'%3EC.A%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#121212;
+    --ink-2:#1B1710;
+    --ink-3:#221C13;
+    --gold:#C5A059;
+    --gold-bright:#E4C077;
+    --gold-deep:#8A6B33;
+    --paper:#F7F5F0;
+    --paper-2:#EFEBE2;
+    --paper-line:rgba(18,16,12,0.12);
+    --ink-line:rgba(229,199,119,0.18);
+    --text-onlight:#1A1712;
+    --text-onlight-soft:#5C5648;
+    --text-ondark:#F3EFE6;
+    --text-ondark-soft:#B9AF9C;
+    --shadow:0 26px 54px -30px rgba(10,8,4,0.6);
+    --font-display:'Cormorant Garamond','Iowan Old Style',Georgia,serif;
+    --font-body:'Work Sans','Segoe UI',Arial,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--font-body);
+    background:var(--paper);
+    color:var(--text-onlight);
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{font-family:var(--font-display);margin:0;text-wrap:balance;}
+  p{margin:0;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  .brand-mark{
+    background-image:url("logo.jpg");
+    background-size:cover;
+    background-position:center;
+    border-radius:50%;
+    flex-shrink:0;
+  }
+  .eyebrow{
+    font-size:.78rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-weight:600;
+    color:var(--gold);
+    display:inline-flex;
+    align-items:center;
+    gap:.6em;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--gold);display:inline-block;}
+  .icon{fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+    padding:.95em 1.7em;border-radius:999px;font-family:var(--font-body);
+    font-weight:600;font-size:.95rem;cursor:pointer;border:1px solid transparent;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
+    white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-gold{background:linear-gradient(180deg,var(--gold-bright),var(--gold));color:#1A1408;box-shadow:0 16px 30px -14px rgba(197,160,89,0.55);}
+  .btn-gold:hover{box-shadow:0 20px 36px -14px rgba(197,160,89,0.7);}
+  .btn-outline-dark{background:transparent;color:var(--text-ondark);border-color:rgba(243,239,230,0.35);}
+  .btn-outline-dark:hover{border-color:var(--gold);color:var(--gold-bright);}
+  .btn-outline-light{background:transparent;color:var(--text-onlight);border-color:var(--paper-line);}
+  .btn-outline-light:hover{border-color:var(--gold-deep);color:var(--gold-deep);}
+  .btn-sm{padding:.7em 1.3em;font-size:.85rem;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:40;background:rgba(18,18,18,0.92);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--ink-line);
+  }
+  .nav-row{display:flex;align-items:center;justify-content:space-between;height:84px;gap:24px;}
+  .brand-lockup{display:flex;align-items:center;gap:14px;}
+  .brand-lockup .brand-mark{width:50px;height:50px;}
+  .brand-lockup .word-1{font-family:var(--font-body);font-size:.72rem;letter-spacing:.14em;color:var(--text-ondark);font-weight:700;text-transform:uppercase;}
+  .brand-lockup .word-2{font-family:var(--font-display);font-style:italic;font-size:1.05rem;color:var(--gold-bright);line-height:1.3;}
+  nav.links{display:flex;align-items:center;gap:34px;}
+  nav.links a{font-size:.92rem;color:var(--text-ondark-soft);font-weight:500;transition:color .15s ease;}
+  nav.links a:hover{color:var(--gold-bright);}
+  .header-actions{display:flex;align-items:center;gap:14px;}
+  .phone-chip{
+    display:flex;align-items:center;gap:.55em;padding:.6em 1.1em;border-radius:999px;
+    border:1px solid rgba(243,239,230,0.22);color:var(--text-ondark);font-size:.88rem;font-weight:600;
+  }
+  .phone-chip svg{width:16px;height:16px;stroke:var(--gold-bright);}
+  .nav-toggle{display:none;}
+
+  /* Floating WhatsApp */
+  .wa-float{
+    position:fixed;right:22px;bottom:22px;z-index:50;
+    display:flex;align-items:center;gap:.6em;padding:.85em 1.3em;border-radius:999px;
+    background:#1E7D53;color:#fff;font-weight:600;font-size:.9rem;box-shadow:0 18px 34px -14px rgba(0,0,0,0.55);
+  }
+  .wa-float svg{width:20px;height:20px;fill:#fff;stroke:none;}
+  .wa-float:hover{transform:translateY(-2px);}
+
+  /* Hero */
+  .hero{
+    position:relative;background:var(--ink);color:var(--text-ondark);
+    padding:108px 0 96px;overflow:hidden;
+  }
+  .hero-skyline{position:absolute;left:0;right:0;bottom:0;height:190px;opacity:.5;pointer-events:none;}
+  .hero-skyline svg{width:100%;height:100%;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center;position:relative;z-index:2;}
+  .hero h1{font-size:clamp(2.5rem,4.6vw,3.9rem);font-weight:600;line-height:1.08;color:var(--text-ondark);margin-top:22px;}
+  .hero h1 em{font-style:italic;color:var(--gold-bright);}
+  .hero p.lead{margin-top:26px;font-size:1.14rem;line-height:1.65;color:var(--text-ondark-soft);max-width:46ch;}
+  .hero-ctas{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap;}
+  .hero-stats{display:flex;gap:36px;margin-top:56px;flex-wrap:wrap;}
+  .hero-stats .stat-num{font-family:var(--font-display);font-size:2.1rem;color:var(--gold-bright);font-weight:600;}
+  .hero-stats .stat-label{font-size:.82rem;color:var(--text-ondark-soft);margin-top:2px;}
+  .hero-badge-wrap{display:flex;justify-content:center;position:relative;z-index:2;}
+  .hero-badge-wrap .brand-mark{width:280px;height:280px;box-shadow:0 40px 80px -30px rgba(0,0,0,0.7);border:1px solid rgba(229,199,119,0.35);}
+
+  /* Section basics */
+  section{padding:96px 0;}
+  .section-head{max-width:640px;margin-bottom:52px;}
+  .section-head h2{font-size:clamp(1.9rem,3vw,2.6rem);font-weight:600;margin-top:16px;line-height:1.18;}
+  .section-head p{margin-top:18px;font-size:1.05rem;line-height:1.65;color:var(--text-onlight-soft);}
+  .on-dark .section-head p{color:var(--text-ondark-soft);}
+  .on-dark .section-head h2{color:var(--text-ondark);}
+
+  /* Kat karsiligi promo */
+  .promo{background:var(--paper);}
+  .promo-card{
+    background:var(--ink);color:var(--text-ondark);border-radius:26px;
+    padding:56px;position:relative;overflow:hidden;border:1px solid var(--ink-line);box-shadow:var(--shadow);
+  }
+  .promo-card::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(700px 340px at 88% -10%, rgba(197,160,89,0.22), transparent 60%);
+    pointer-events:none;
+  }
+  .promo-top{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;position:relative;z-index:1;}
+  .promo-card h2{font-size:clamp(1.8rem,3vw,2.5rem);color:var(--text-ondark);margin-top:14px;line-height:1.16;}
+  .promo-card .slogan{font-family:var(--font-display);font-style:italic;color:var(--gold-bright);font-size:1.2rem;margin-top:16px;}
+  .promo-card p.desc{margin-top:20px;color:var(--text-ondark-soft);line-height:1.7;font-size:1.02rem;}
+  .region-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+  .region-chip{
+    padding:.55em 1.15em;border-radius:999px;border:1px solid rgba(229,199,119,0.35);
+    font-size:.88rem;font-weight:600;color:var(--gold-bright);
+  }
+  .condition-box{
+    align-self:start;background:rgba(229,199,119,0.08);border:1px solid var(--ink-line);
+    border-radius:18px;padding:28px;position:relative;z-index:1;
+  }
+  .condition-box .cb-label{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-ondark-soft);font-weight:600;}
+  .condition-box .cb-value{font-family:var(--font-display);font-size:2.3rem;color:var(--gold-bright);margin-top:8px;font-weight:600;}
+  .condition-box .cb-note{margin-top:6px;font-size:.92rem;color:var(--text-ondark-soft);}
+  .condition-box .cb-solution{margin-top:22px;padding-top:22px;border-top:1px solid var(--ink-line);font-size:.92rem;line-height:1.6;color:var(--text-ondark-soft);}
+  .promo-ctas{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap;position:relative;z-index:1;}
+  .call-bar{
+    margin-top:36px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;
+    background:linear-gradient(180deg,var(--gold-bright),var(--gold));border-radius:16px;padding:22px 30px;
+    position:relative;z-index:1;
+  }
+  .call-bar .cb-text{color:#1A1408;font-weight:700;font-size:1.05rem;display:flex;align-items:center;gap:.6em;}
+  .call-bar .cb-text svg{width:20px;height:20px;stroke:#1A1408;}
+  .call-bar a.call-num{color:#1A1408;font-family:var(--font-display);font-size:1.3rem;font-weight:700;}
+
+  /* Portfolio */
+  .portfolio{background:var(--paper-2);}
+  .toggle-row{display:flex;gap:12px;margin-bottom:44px;}
+  .toggle-pill{padding:.7em 1.6em;border-radius:999px;font-size:.9rem;font-weight:600;}
+  .toggle-pill.active{background:var(--ink);color:var(--gold-bright);}
+  .toggle-pill.inactive{background:transparent;color:var(--text-onlight-soft);border:1px solid var(--paper-line);}
+  .prop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .prop-card{
+    background:#fff;border:1px solid var(--paper-line);border-radius:20px;padding:34px;
+    display:flex;flex-direction:column;gap:16px;transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .prop-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+  .prop-icon{width:52px;height:52px;border-radius:14px;background:var(--ink);display:flex;align-items:center;justify-content:center;}
+  .prop-icon svg{width:26px;height:26px;stroke:var(--gold-bright);}
+  .prop-card h3{font-size:1.3rem;font-weight:600;}
+  .prop-card p{color:var(--text-onlight-soft);font-size:.95rem;line-height:1.6;}
+  .prop-tags{display:flex;gap:8px;margin-top:auto;flex-wrap:wrap;}
+  .prop-tag{font-size:.76rem;font-weight:700;letter-spacing:.04em;padding:.4em .85em;border-radius:999px;background:var(--paper-2);color:var(--gold-deep);border:1px solid var(--paper-line);}
+  .portfolio-note{
+    margin-top:38px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;
+    background:var(--ink);border-radius:18px;padding:26px 32px;color:var(--text-ondark);
+  }
+  .portfolio-note p{color:var(--text-ondark-soft);font-size:.98rem;}
+
+  /* About */
+  .about{background:var(--ink);color:var(--text-ondark);}
+  .about-grid{display:grid;grid-template-columns:.62fr 1.38fr;gap:64px;align-items:center;}
+  .about-badge-frame{display:flex;justify-content:center;}
+  .about-badge-frame .brand-mark{width:230px;height:230px;border:1px solid var(--ink-line);box-shadow:var(--shadow);}
+  .about h2{font-size:clamp(1.9rem,3vw,2.5rem);color:var(--text-ondark);margin-top:16px;line-height:1.2;}
+  .about p.bio{margin-top:22px;font-size:1.08rem;line-height:1.75;color:var(--text-ondark-soft);max-width:60ch;}
+  .value-row{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;}
+  .value-chip{
+    display:flex;align-items:center;gap:.6em;padding:.75em 1.2em;border-radius:999px;
+    border:1px solid var(--ink-line);font-size:.88rem;font-weight:600;color:var(--gold-bright);
+  }
+  .value-chip svg{width:16px;height:16px;stroke:var(--gold-bright);}
+
+  /* Why grid */
+  .why{background:var(--paper);}
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+  .why-item{padding:34px 28px;border-radius:18px;background:#fff;border:1px solid var(--paper-line);}
+  .why-item .icon-lg{width:40px;height:40px;stroke:var(--gold-deep);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+  .why-item h3{font-size:1.12rem;font-weight:600;margin-top:18px;}
+  .why-item p{margin-top:10px;font-size:.92rem;line-height:1.6;color:var(--text-onlight-soft);}
+
+  /* CTA band */
+  .cta-band{background:linear-gradient(180deg,var(--ink-2),var(--ink));color:var(--text-ondark);text-align:center;}
+  .cta-band h2{font-size:clamp(2rem,3.6vw,2.9rem);color:var(--text-ondark);max-width:20ch;margin:0 auto;}
+  .cta-band p{margin-top:18px;color:var(--text-ondark-soft);font-size:1.05rem;max-width:52ch;margin-left:auto;margin-right:auto;}
+  .cta-band .hero-ctas{justify-content:center;margin-top:36px;}
+
+  /* Footer */
+  footer{background:var(--ink-2);color:var(--text-ondark-soft);padding:64px 0 32px;border-top:1px solid var(--ink-line);}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:48px;}
+  .footer-brand{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+  .footer-brand .brand-mark{width:46px;height:46px;}
+  .footer-brand .word-1{font-size:.7rem;letter-spacing:.14em;color:var(--text-ondark);font-weight:700;text-transform:uppercase;}
+  .footer-brand .word-2{font-family:var(--font-display);font-style:italic;font-size:1rem;color:var(--gold-bright);}
+  footer h4{color:var(--text-ondark);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px;font-weight:600;}
+  footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;}
+  footer a{font-size:.94rem;transition:color .15s ease;}
+  footer a:hover{color:var(--gold-bright);}
+  .footer-bottom{margin-top:52px;padding-top:26px;border-top:1px solid var(--ink-line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.85rem;}
+
+  @media (max-width:920px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-badge-wrap{order:-1;}
+    .hero-badge-wrap .brand-mark{width:170px;height:170px;}
+    .promo-top{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;}
+    .about-badge-frame{order:-1;}
+    .prop-grid{grid-template-columns:1fr 1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    nav.links{display:none;}
+  }
+  @media (max-width:600px){
+    .nav-row{height:72px;}
+    .brand-lockup .brand-mark{width:42px;height:42px;}
+    .brand-lockup .word-1{font-size:.66rem;}
+    .brand-lockup .word-2{font-size:.95rem;}
+    .header-actions .phone-chip{display:none;}
+    section{padding:72px 0;}
+    .prop-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .call-bar{flex-direction:column;align-items:flex-start;}
+    .promo-card{padding:34px 26px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-row">
+    <a href="#top" class="brand-lockup">
+      <div class="brand-mark"></div>
+      <div>
+        <div class="word-1">C.A Gayrimenkul</div>
+        <div class="word-2">Cansu Akgün</div>
+      </div>
+    </a>
+    <nav class="links">
+      <a href="#kat-karsiligi">Kat Karşılığı</a>
+      <a href="#portfoy">Portföy</a>
+      <a href="#hakkimizda">Hakkımızda</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+    <div class="header-actions">
+      <a class="phone-chip" href="tel:+905425573048">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span class="txt">0542 557 30 48</span>
+      </a>
+      <a class="btn btn-gold btn-sm" href="https://wa.me/905425573048?text=Merhaba%2C%20gayrimenkul%20dan%C4%B1%C5%9Fmanl%C4%B1%C4%9F%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<a class="wa-float" href="https://wa.me/905425573048?text=Merhaba%2C%20gayrimenkul%20dan%C4%B1%C5%9Fmanl%C4%B1%C4%9F%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">
+  <svg viewBox="0 0 32 32"><path d="M16.01 2.4C8.5 2.4 2.4 8.5 2.4 16c0 2.53.7 4.9 1.92 6.93L2.4 29.6l6.86-1.87a13.5 13.5 0 0 0 6.75 1.8h.01c7.5 0 13.6-6.1 13.6-13.6S23.5 2.4 16.01 2.4zm7.94 19.4c-.34.96-1.68 1.76-2.76 1.99-.73.15-1.68.27-4.9-1.05-3.86-1.6-6.35-5.53-6.55-5.79-.19-.26-1.57-2.09-1.57-3.99 0-1.9.99-2.83 1.35-3.22.34-.37.75-.46 1-.46.25 0 .5 0 .72.01.23.01.54-.09.84.65.34.83 1.16 2.86 1.26 3.07.1.2.17.44.03.71-.13.27-.2.44-.4.68-.2.24-.42.53-.6.71-.2.2-.41.42-.18.82.24.4 1.06 1.75 2.27 2.84 1.56 1.39 2.87 1.82 3.28 2.02.4.2.64.17.87-.1.24-.27 1.03-1.2 1.3-1.61.28-.4.55-.34.92-.2.37.13 2.36 1.11 2.76 1.32.4.2.67.3.77.47.1.17.1.98-.24 1.94z"/></svg>
+  WhatsApp'tan Yaz
+</a>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-skyline" aria-hidden="true">
+      <svg viewBox="0 0 1200 200" preserveAspectRatio="none">
+        <path d="M0 200 L0 150 L40 150 L40 110 L80 110 L80 160 L130 160 L130 90 L150 90 L150 60 L170 60 L170 90 L190 90 L190 150 L250 150 L250 120 L290 120 L290 170 L340 170 L340 100 L360 100 L360 130 L400 130 L400 150 L470 150 L470 80 L500 80 L500 50 L520 50 L520 80 L540 80 L540 150 L610 150 L610 120 L650 120 L650 160 L710 160 L710 95 L730 95 L730 60 L750 60 L750 95 L770 95 L770 160 L840 160 L840 110 L880 110 L880 150 L940 150 L940 70 L960 70 L960 40 L980 40 L980 70 L1000 70 L1000 150 L1080 150 L1080 130 L1120 130 L1120 170 L1200 170 L1200 200 Z" fill="#1B1710" stroke="rgba(229,199,119,0.25)" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Sultanbeyli · Pendik · Tuzla · Sancaktepe</span>
+        <h1>8 Yıllık Kurumsal Deneyimle <em>Gayrimenkulde Güvenin Adresi</em></h1>
+        <p class="lead">C.A Gayrimenkul – Cansu Akgün güvencesiyle hayalinizdeki mülke ulaşın veya arsanızı en doğru projeyle değerlendirin.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-gold" href="#portfoy">Portföyü İncele</a>
+          <a class="btn btn-outline-dark" href="https://wa.me/905425573048?text=Merhaba%2C%20ekspertiz%20talebim%20var." target="_blank" rel="noopener">Ekspertiz İsteyin</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="stat-num">8+</div><div class="stat-label">Yıl Sektör Tecrübesi</div></div>
+          <div><div class="stat-num">4</div><div class="stat-label">Bölgede Aktif Hizmet</div></div>
+          <div><div class="stat-num">500m²+</div><div class="stat-label">Kat Karşılığı Kapsamı</div></div>
+        </div>
+      </div>
+      <div class="hero-badge-wrap">
+        <div class="brand-mark" role="img" aria-label="C.A Gayrimenkul - Cansu Akgün logosu"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="promo" id="kat-karsiligi">
+    <div class="wrap">
+      <div class="promo-card">
+        <div class="promo-top">
+          <div>
+            <span class="eyebrow">Özel Fırsat</span>
+            <h2>Arsanız Kat Karşılığı Projelere Uygun mu?</h2>
+            <p class="slogan">Güven. Deneyim. Değer.</p>
+            <p class="desc">Sultanbeyli, Pendik, Tuzla ve Sancaktepe bölgelerindeki arsanızı, bölgenin güçlü müteahhit ağı ile kat karşılığı anlaşma ve uçtan uca proje yönetimi hizmetimizle değerlendiriyoruz. Süreç boyunca sözleşmeden teslime kadar her adımda yanınızdayız.</p>
+            <div class="region-row">
+              <span class="region-chip">Sultanbeyli</span>
+              <span class="region-chip">Pendik</span>
+              <span class="region-chip">Tuzla</span>
+              <span class="region-chip">Sancaktepe</span>
+            </div>
+            <div class="promo-ctas">
+              <a class="btn btn-gold" href="https://wa.me/905425573048?text=Merhaba%2C%20kat%20kar%C5%9F%C4%B1l%C4%B1%C4%9F%C4%B1%20ar%C4%B1%20de%C4%9Ferlendirme%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">Ücretsiz Ekspertiz Alın</a>
+              <a class="btn btn-outline-dark" href="https://wa.me/905425573048?text=Merhaba%2C%20arsam%20i%C3%A7in%20detayl%C4%B1%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">Detaylı Bilgi Alın</a>
+            </div>
+          </div>
+          <div class="condition-box">
+            <div class="cb-label">Aranan Şart</div>
+            <div class="cb-value">500 m²+</div>
+            <div class="cb-note">ve üzeri arsalar için kat karşılığı değerlendirme kapsamındadır.</div>
+            <div class="cb-solution">Bölgenin güçlü müteahhit ağı ile kat karşılığı anlaşma ve proje yönetimi sağlanır — arsanızın değerine değer katın.</div>
+          </div>
+        </div>
+        <div class="call-bar">
+          <span class="cb-text">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Direkt Ara
+          </span>
+          <a class="call-num" href="tel:+905425573048">0542 557 30 48</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfoy">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Portföy</span>
+        <h2>Her Bütçeye Uygun Satılık ve Kiralık Gayrimenkuller</h2>
+        <p>Bütçenize en uygun konut, iş yeri ve yatırım fırsatları şeffaf ve kurumsal hizmet anlayışıyla sunulmaktadır.</p>
+      </div>
+      <div class="toggle-row" aria-hidden="true">
+        <span class="toggle-pill active">Satılık</span>
+        <span class="toggle-pill inactive">Kiralık</span>
+      </div>
+      <div class="prop-grid">
+        <div class="prop-card">
+          <div class="prop-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg></div>
+          <h3>Daire</h3>
+          <p>Aileniz için doğru evi birlikte bulalım — bütçenize ve bölgenize uygun konut seçenekleri.</p>
+          <div class="prop-tags"><span class="prop-tag">Satılık</span><span class="prop-tag">Kiralık</span></div>
+        </div>
+        <div class="prop-card">
+          <div class="prop-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><rect x="4" y="4" width="16" height="17"/><path d="M9 21v-4h6v4"/><path d="M8 8h2M14 8h2M8 12h2M14 12h2"/></svg></div>
+          <h3>İş Yeri</h3>
+          <p>Ticari mülk ve yatırım fırsatlarında işletmenize en uygun konum ve metrekareyi belirliyoruz.</p>
+          <div class="prop-tags"><span class="prop-tag">Satılık</span><span class="prop-tag">Kiralık</span></div>
+        </div>
+        <div class="prop-card">
+          <div class="prop-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M3 20 12 4l9 16z"/><path d="M8 20l4-7 4 7"/></svg></div>
+          <h3>Arsa</h3>
+          <p>İmarlı ve yatırımlık arsalarda, kat karşılığı değerlendirme dahil doğru fiyatlama ve danışmanlık.</p>
+          <div class="prop-tags"><span class="prop-tag">Satılık</span><span class="prop-tag">Kat Karşılığı</span></div>
+        </div>
+      </div>
+      <div class="portfolio-note">
+        <p>Güncel portföy ve fiyat bilgisi için doğrudan iletişime geçebilirsiniz — talebinize en uygun seçenekleri birlikte belirleyelim.</p>
+        <a class="btn btn-gold btn-sm" href="https://wa.me/905425573048?text=Merhaba%2C%20g%C3%BCncel%20portf%C3%B6y%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">Portföy Bilgisi Alın</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about on-dark" id="hakkimizda">
+    <div class="wrap about-grid">
+      <div class="about-badge-frame">
+        <div class="brand-mark" role="img" aria-label="C.A Gayrimenkul - Cansu Akgün logosu"></div>
+      </div>
+      <div>
+        <span class="eyebrow">Hakkımızda</span>
+        <h2>Kurumsal Güven, Bölgeye Hakim Uzmanlık</h2>
+        <p class="bio">8 yılı aşkın sektör tecrübemiz, uzman kadromuz ve bölgeye hakim yapımızla gayrimenkul alım, satım ve kiralama süreçlerinizde yanınızdayız. Cansu Akgün liderliğinde, Sultanbeyli, Pendik, Tuzla ve Sancaktepe başta olmak üzere İstanbul Anadolu Yakası'nda şeffaf, kurumsal ve sonuç odaklı bir danışmanlık anlayışı sunuyoruz.</p>
+        <div class="value-row">
+          <span class="value-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5z"/></svg>Güven</span>
+          <span class="value-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Deneyim</span>
+          <span class="value-chip"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="m3 17 6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>Değer</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Neden C.A Gayrimenkul</span>
+        <h2>Kurumsal Yaklaşım, Bölgeye Hakim Sonuçlar</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item">
+          <svg class="icon-lg" viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5z"/></svg>
+          <h3>Kurumsal Yaklaşım</h3>
+          <p>Sözleşmeden teslime kadar şeffaf, kayıt altında ve profesyonel süreç yönetimi.</p>
+        </div>
+        <div class="why-item">
+          <svg class="icon-lg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <h3>Bölge Uzmanlığı</h3>
+          <p>Sultanbeyli, Pendik, Tuzla ve Sancaktepe'de yıllara dayanan yerel piyasa bilgisi.</p>
+        </div>
+        <div class="why-item">
+          <svg class="icon-lg" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 1 1-4-7.2"/><path d="M21 4v6h-6"/></svg>
+          <h3>Şeffaf İletişim</h3>
+          <p>Her aşamada net bilgilendirme; sürpriz maliyet veya belirsizlik yok.</p>
+        </div>
+        <div class="why-item">
+          <svg class="icon-lg" viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M2 21v-2a5 5 0 0 1 5-5h1"/><circle cx="17" cy="7" r="3"/><path d="M14 14h1a5 5 0 0 1 5 5v2"/></svg>
+          <h3>Güçlü İş Ortaklığı Ağı</h3>
+          <p>Bölgenin güvenilir müteahhitleri ve tedarikçileriyle kurulu iş birlikleri.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band" id="iletisim">
+    <div class="wrap">
+      <span class="eyebrow" style="justify-content:center;display:flex;">İletişim</span>
+      <h2>Gayrimenkul Yolculuğunuza Bugün Başlayın</h2>
+      <p>İster satılık/kiralık bir mülk arıyor olun, ister arsanızı kat karşılığı değerlendirmek isteyin — C.A Gayrimenkul güvencesiyle doğru adımı birlikte atalım.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="https://wa.me/905425573048?text=Merhaba%2C%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp'tan Yaz</a>
+        <a class="btn btn-outline-dark" href="tel:+905425573048">0542 557 30 48 — Ara</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="brand-mark"></div>
+          <div>
+            <div class="word-1">C.A Gayrimenkul</div>
+            <div class="word-2">Cansu Akgün</div>
+          </div>
+        </div>
+        <p style="max-width:32ch;font-size:.92rem;line-height:1.6;">Güven. Deneyim. Değer. İstanbul Anadolu Yakası'nda kurumsal gayrimenkul danışmanlığı.</p>
+      </div>
+      <div>
+        <h4>Kurumsal</h4>
+        <ul>
+          <li><a href="#kat-karsiligi">Kat Karşılığı</a></li>
+          <li><a href="#portfoy">Portföy</a></li>
+          <li><a href="#hakkimizda">Hakkımızda</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>İletişim</h4>
+        <ul>
+          <li><a href="tel:+905425573048">0542 557 30 48</a></li>
+          <li><a href="https://wa.me/905425573048" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><span>Sultanbeyli · Pendik · Tuzla · Sancaktepe</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> C.A Gayrimenkul – Cansu Akgün. Tüm hakları saklıdır.</span>
+      <span>Güven. Deneyim. Değer.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
