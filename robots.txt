@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cansuakgun.com.tr/sitemap.xml
+Sitemap: https://cansuakgun.com/sitemap.xml
