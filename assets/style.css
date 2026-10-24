@@ -349,3 +349,21 @@ footer a:hover{color:var(--gold-bright);}
   .agent-mini{position:static;}
   .listing-facts{grid-template-columns:1fr 1fr;}
 }
+
+/* ===== Düzeltmeler: mobil menü, açılır liste okunabilirliği, form durumu, yazı tarihi ===== */
+.menu-toggle{display:none;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:44px;height:44px;padding:0;border:1px solid rgba(232,198,106,.45);border-radius:10px;background:transparent;cursor:pointer;order:9;flex:none;}
+.menu-toggle span{display:block;width:18px;height:2px;background:#e8c66a;border-radius:2px;}
+.mobile-panel{display:none;flex-direction:column;gap:2px;padding:8px 24px 22px;border-top:1px solid rgba(232,198,106,.2);background:#0d0d0e;}
+.mobile-panel a:not(.btn){display:block;padding:13px 0;font-weight:600;font-size:.95rem;color:#e9e2d2;border-bottom:1px solid rgba(246,239,224,.08);}
+.mobile-panel .btn{display:flex;margin-top:14px;justify-content:center;color:#0d0d0e;}
+@media (max-width:920px){ .menu-toggle{display:inline-flex;} .mobile-panel:not([hidden]){display:flex;} }
+@media (max-width:600px){ .header-actions .btn-gold{display:none;} }
+select{color-scheme:light;}
+.field select option{background:#fff;color:#1d1d1f;}
+.search-widget select{color-scheme:dark;}
+.search-widget select option{background:#0d0d0e;color:#f6efe0;}
+.form-note{margin-top:14px;font-size:.82rem;line-height:1.55;color:#6b6457;}
+.form-status{margin-top:16px;padding:14px 16px;border-radius:10px;background:#f6efe0;border:1px solid #e3d3b0;color:#3a2f1c;font-size:.9rem;line-height:1.55;}
+.form-status[hidden]{display:none;}
+.form-status a{color:#7a5a1e;text-decoration:underline;}
+.post-meta{font-size:.84rem;letter-spacing:.03em;color:#cfc6b3;margin:-6px 0 22px;}
