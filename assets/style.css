@@ -374,3 +374,5 @@ select{color-scheme:light;}
 .prop-tag{color:#65490f;}
 .breadcrumb .wrap,.breadcrumb a{color:#e6dcc6;}
 footer h3{font-family:inherit;color:var(--text-ondark);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px;font-weight:600;}
+.breadcrumb{background:#1c1610;}
+.breadcrumb .wrap,.breadcrumb a,.breadcrumb span{color:#e6dcc6;}
