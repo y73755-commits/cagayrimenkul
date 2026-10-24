@@ -367,3 +367,10 @@ select{color-scheme:light;}
 .form-status[hidden]{display:none;}
 .form-status a{color:#7a5a1e;text-decoration:underline;}
 .post-meta{font-size:.84rem;letter-spacing:.03em;color:#cfc6b3;margin:-6px 0 22px;}
+
+/* ===== Düzeltmeler: WCAG AA kontrast, footer başlık sırası, breadcrumb okunabilirliği ===== */
+.eyebrow{color:#65490f;}
+.on-dark .eyebrow,.hero-grid .eyebrow,.page-hero .eyebrow{color:#d4b06a;}
+.prop-tag{color:#65490f;}
+.breadcrumb .wrap,.breadcrumb a{color:#e6dcc6;}
+footer h3{font-family:inherit;color:var(--text-ondark);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px;font-weight:600;}
