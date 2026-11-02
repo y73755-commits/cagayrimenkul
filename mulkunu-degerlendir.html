@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://tagmanager.google.com https://www.googleadservices.com https://www.google.com https://googleads.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://tagmanager.google.com; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.tr https://ssl.gstatic.com https://www.gstatic.com; font-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://www.google.com https://www.google.com.tr https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com; frame-src https://www.googletagmanager.com https://td.doubleclick.net https://tagassistant.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Mülkünü Değerlendir | C.A Gayrimenkul</title>
 <meta name="description" content="Mülkünüzü veya arsanızı detaylı bilgi için C.A Gayrimenkul'e bildirin - satış, kiralama veya kat karşılığı.">
 <link rel="canonical" href="https://cansuakgun.com/mulkunu-degerlendir.html">
@@ -36,10 +38,9 @@
 }
 </script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%230d0d0e'/%3E%3Ctext x='32' y='40' font-family='Georgia,serif' font-size='24' fill='%23e8c66a' text-anchor='middle'%3EC.A%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="preload" href="assets/fonts/worksans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/cormorant-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css?v=3">
 </head>
 <body>
 
@@ -219,6 +220,7 @@
           <li><a href="kvkk.html">KVKK Aydınlatma Metni</a></li>
           <li><a href="gizlilik-politikasi.html">Gizlilik Politikası</a></li>
           <li><a href="cerez-politikasi.html">Çerez Politikası</a></li>
+          <li><button type="button" class="linkish" data-olcum-tercih>Çerez Tercihleri</button></li>
           <li><a href="kullanim-kosullari.html">Kullanım Şartları</a></li>
         </ul>
       </div>
@@ -230,54 +232,8 @@
   </div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  function buildMessage() {
-    const v = id => document.getElementById(id).value.trim();
-    const lines = [
-      'Merhaba, mülk değerlendirme talebim:',
-      'Ad Soyad: ' + v('ad'),
-      'Telefon: ' + v('telefon'),
-      'İşlem Tipi: ' + v('islem'),
-      'Mülk Tipi: ' + v('mulktipi'),
-      'Bölge/Adres: ' + v('adres'),
-      'Metrekare: ' + (v('m2') || '-'),
-      'Kat: ' + (v('kat') || '-'),
-      'Tapu Durumu: ' + (v('tapu') || '-'),
-      'Kullanım Durumu: ' + (v('kullanim') || '-'),
-      'Açıklama: ' + (v('aciklama') || '-')
-    ];
-    return lines.join('\n');
-  }
-
-  function validate() {
-    const form = document.getElementById('degerlendir-form');
-    if (!form.checkValidity()) {
-      form.reportValidity();
-      return false;
-    }
-    return true;
-  }
-
-  document.getElementById('btn-whatsapp').addEventListener('click', function () {
-    var statusEl = document.getElementById('form-status');
-    var phoneEl = document.getElementById('telefon');
-    if (!validate()) return;
-    var digits = phoneEl.value.replace(/\D/g, '');
-    if (!/^05\d{9}$/.test(digits)) {
-      statusEl.innerHTML = 'Lütfen geçerli bir cep telefonu numarası girin (örnek: 0542 557 30 48).';
-      statusEl.hidden = false;
-      phoneEl.focus();
-      return;
-    }
-    var url = 'https://wa.me/905425573048?text=' + encodeURIComponent(buildMessage());
-    var w = window.open(url, '_blank');
-    if (w) { try { w.opener = null; } catch (e) {} } else { window.location.href = url; }
-    statusEl.innerHTML = 'Mesajınız WhatsApp\'ta hazırlandı. <strong>Son adım:</strong> açılan WhatsApp ekranında <strong>Gönder</strong> tuşuna basmanız gerekir. WhatsApp açılmazsa <a href="tel:+905425573048">0542 557 30 48</a> numarasını arayabilirsiniz.';
-    statusEl.hidden = false;
-  });
-</script>
-<script src="assets/site.js" defer></script>
+<script src="assets/form.js?v=1" defer></script>
+<script src="assets/olcum.js?v=1" defer></script>
+<script src="assets/site.js?v=2" defer></script>
 </body>
 </html>

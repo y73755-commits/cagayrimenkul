@@ -12,14 +12,19 @@
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
 })();
 
-window.dataLayer = window.dataLayer || [];
-document.addEventListener('click', function(e){
-  var t = e.target;
-  var a = t && t.closest ? t.closest('a[href]') : null;
-  if(a){
-    var h = a.getAttribute('href') || '';
-    if(h.indexOf('wa.me') !== -1) window.dataLayer.push({event: 'whatsapp_click', page_path: location.pathname});
-    else if(h.indexOf('tel:') === 0) window.dataLayer.push({event: 'phone_click', page_path: location.pathname});
-  }
-  if(t && t.closest && t.closest('#btn-whatsapp')) window.dataLayer.push({event: 'form_whatsapp_submit_attempt', page_path: location.pathname});
-});
+/* Telefon/WhatsApp tıklama ölçümü ve çerez izni: assets/olcum.js */
+
+/* altbilgi yılı */
+(function () { var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear(); })();
+
+/* anasayfa arama kutusu → iletişim formu (tercihler forma aktarılır) */
+(function () {
+  var f = document.querySelector('form.search-widget');
+  if (!f) return;
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var g = function (id) { var el = document.getElementById(id); return el ? el.value : ''; };
+    var q = new URLSearchParams({ islem: g('sw-islem'), kategori: g('sw-kategori'), bolge: g('sw-bolge') });
+    window.location.href = 'iletisim.html?' + q.toString();
+  });
+})();

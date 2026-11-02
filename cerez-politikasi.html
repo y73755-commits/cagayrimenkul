@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://tagmanager.google.com https://www.googleadservices.com https://www.google.com https://googleads.g.doubleclick.net; style-src 'self' 'unsafe-inline' https://tagmanager.google.com; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.tr https://ssl.gstatic.com https://www.gstatic.com; font-src 'self' data:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://www.google.com https://www.google.com.tr https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com; frame-src https://www.googletagmanager.com https://td.doubleclick.net https://tagassistant.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Çerez Politikası | C.A Gayrimenkul</title>
 <meta name="description" content="C.A Gayrimenkul Çerez Politikası - internet sitesinde çerez kullanımına ilişkin bilgilendirme.">
 <link rel="canonical" href="https://cansuakgun.com/cerez-politikasi.html">
@@ -36,10 +38,9 @@
 }
 </script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='31' fill='%230d0d0e'/%3E%3Ctext x='32' y='40' font-family='Georgia,serif' font-size='24' fill='%23e8c66a' text-anchor='middle'%3EC.A%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="preload" href="assets/fonts/worksans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/cormorant-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/style.css?v=3">
 </head>
 <body>
 
@@ -97,18 +98,19 @@
 
   <section>
     <div class="wrap prose">
-      <p class="updated-note">Son güncelleme: 18 Eylül 2026</p>
+      <p class="updated-note">Son güncelleme: 2 Kasım 2026</p>
 
       <p>Bu Çerez Politikası, C.A Gayrimenkul (Cansu Akgün) internet sitesinin ("Site") çerez kullanımına ilişkin bilgilendirme amacıyla hazırlanmıştır.</p>
 
       <h2>1. Çerez Kullanımımız</h2>
-      <p>Site, ziyaretçi takibi, reklam veya analitik amaçlı hiçbir çerez (cookie) kullanmamaktadır. Sitede yalnızca tarayıcınızın sayfayı normal şekilde görüntülemesi için gerekli olan, kişisel veri içermeyen teknik verilerin (ör. sayfa görüntüleme) işlenmesi söz konusudur; bu işlemler için ayrıca bir çerez onayı gerekmemektedir.</p>
+      <p>Site şu anda ziyaretçi takibi, reklam veya analitik amaçlı çerez (cookie) kullanmamaktadır. Yazı tipleri dahil tüm site dosyaları sitenin kendi sunucusundan yüklenir; Google Fonts gibi dış bir hizmete istek gönderilmez. Sitenin barındırıldığı hizmet (GitHub Pages), sayfaların sunulması ve güvenliği için IP adresi gibi teknik kayıtları işler. Sayfanın altındaki “Çerez Tercihleri” bağlantısından bir tercih kaydederseniz, bu tercihin hatırlanması için tarayıcınızın yerel depolama alanına (localStorage) küçük bir kayıt yazılır.</p>
 
       <h2>2. Üçüncü Taraf Hizmetleri</h2>
       <p>Site üzerinden WhatsApp gibi üçüncü taraf hizmetlere yönlendiren bağlantılar bulunmaktadır. Bu bağlantıya tıkladığınızda açılan üçüncü taraf uygulama/sitede kendi çerez politikaları geçerli olur; bu husus Site'nin kontrolü dışındadır.</p>
 
       <h2>3. İleride Değişiklik</h2>
-      
+      <p>İleride ziyaret istatistiği (Google Analytics) veya reklam dönüşüm ölçümü (Google Ads) kullanılmaya başlanırsa, bu çerezler <strong>yalnızca izninizle</strong> çalışır ve analiz ile reklam izinleri <strong>ayrı ayrı</strong> sorulur; izin vermediğiniz sürece ilgili Google etiketleri yüklenmez. Bu durumda sayfa açıldığında bir izin bandı gösterilir ve bu politika güncellenir. Verdiğiniz izni sayfanın altındaki “Çerez Tercihleri” bağlantısından istediğiniz zaman değiştirebilir veya geri alabilirsiniz; izni geri aldığınızda ilgili Google çerezleri silinir. Ölçümde ad, telefon, e-posta veya mesaj içeriğiniz Google’a gönderilmez.</p>
+
 
       <h2>4. İletişim</h2>
       <p>Bu Çerez Politikası ile ilgili sorularınız için <a href="tel:+905425573048">0542 557 30 48</a> numaralı telefon veya WhatsApp hattımızdan bize ulaşabilirsiniz.</p>
@@ -157,6 +159,7 @@
           <li><a href="kvkk.html">KVKK Aydınlatma Metni</a></li>
           <li><a href="gizlilik-politikasi.html">Gizlilik Politikası</a></li>
           <li><a href="cerez-politikasi.html">Çerez Politikası</a></li>
+          <li><button type="button" class="linkish" data-olcum-tercih>Çerez Tercihleri</button></li>
           <li><a href="kullanim-kosullari.html">Kullanım Şartları</a></li>
         </ul>
       </div>
@@ -168,7 +171,7 @@
   </div>
 </footer>
 
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-<script src="assets/site.js" defer></script>
+<script src="assets/olcum.js?v=1" defer></script>
+<script src="assets/site.js?v=2" defer></script>
 </body>
 </html>
