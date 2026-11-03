@@ -1,7 +1,7 @@
 /* İletişim ve mülk değerlendirme formları → WhatsApp mesajı.
  * Bilgiler sunucuya gönderilmez; ziyaretçi WhatsApp'ta "Gönder"e bastığında bize ulaşır.
  * Ölçüm (assets/olcum.js):
- *   - her "WhatsApp ile Gönder" tıklaması  → form_submit_attempt (valid: true/false, geçersizse error_field)
+ *   - her "WhatsApp’ta mesajı hazırla" tıklaması  → form_submit_attempt (valid: true/false, geçersizse error_field)
  *   - yalnızca alanlar geçerliyse          → whatsapp_message_prepared (aynı mesaj oturumda bir kez)
  * Bu olaylar mesajın GÖNDERİLDİĞİ anlamına gelmez; gönderim WhatsApp'ta ziyaretçinin elindedir.
  * Olaylara ad, telefon, e-posta veya mesaj içeriği eklenmez. */
