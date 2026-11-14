@@ -36,10 +36,12 @@
     var q = new URLSearchParams(location.search);
     var islem = q.get('islem'), kategori = q.get('kategori'), bolge = q.get('bolge');
     var map = { satilik: 'Satılık', kiralik: 'Kiralık' };
+    var kategoriAd = { daire: 'Daire', isyeri: 'İş Yeri', arsa: 'Arsa' };
+    var bolgeAd = { sultanbeyli: 'Sultanbeyli', pendik: 'Pendik', tuzla: 'Tuzla', sancaktepe: 'Sancaktepe' };
     if (islem && map[islem]) ilgi.value = map[islem];
     var parca = [];
-    if (kategori) parca.push('Kategori: ' + kategori.slice(0, 40));
-    if (bolge) parca.push('Bölge: ' + bolge.slice(0, 40));
+    if (kategori && kategoriAd[kategori]) parca.push('Kategori: ' + kategoriAd[kategori]);
+    if (bolge && bolgeAd[bolge]) parca.push('Bölge: ' + bolgeAd[bolge]);
     if (parca.length && !mesaj.value) mesaj.value = 'Arama tercihlerim -> ' + parca.join(', ');
   })();
 
@@ -61,8 +63,14 @@
         return;
       }
       var phoneEl = document.getElementById('telefon');
+      // 05xx…, 5xx…, +90 5xx…, 0090 5xx… biçimlerini aynı numaraya çevir
       var digits = phoneEl.value.replace(/\D/g, '');
-      if (!/^05\d{9}$/.test(digits)) {
+      if (/^0090\d{10}$/.test(digits)) digits = digits.slice(4);
+      else if (/^90\d{10}$/.test(digits)) digits = digits.slice(2);
+      if (/^5\d{9}$/.test(digits)) digits = '0' + digits;
+      if (/^05\d{9}$/.test(digits)) {
+        phoneEl.value = digits.replace(/^(\d{4})(\d{3})(\d{2})(\d{2})$/, '$1 $2 $3 $4');
+      } else {
         if (olcum()) olcum().formDenemesi(ayar.ad, false, 'telefon');
         durum('Lütfen geçerli bir cep telefonu numarası girin (örnek: 0542 557 30 48).');
         phoneEl.focus();

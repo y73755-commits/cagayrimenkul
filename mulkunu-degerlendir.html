@@ -110,7 +110,7 @@
             </div>
             <div class="field">
               <label for="telefon">Telefon *</label>
-              <input type="tel" id="telefon" name="telefon" required placeholder="05xx xxx xx xx" pattern="0[0-9]{3} ?[0-9]{3} ?[0-9]{2} ?[0-9]{2}" title="0 ile başlayan 11 haneli telefon numarası girin (örnek: 0542 557 30 48)" inputmode="tel" autocomplete="tel">
+              <input type="tel" id="telefon" name="telefon" required placeholder="05xx xxx xx xx" pattern="[0-9+()\s\-]{10,18}" title="Cep telefonu numaranızı girin (örnek: 0542 557 30 48 veya +90 542 557 30 48)" inputmode="tel" autocomplete="tel">
             </div>
             <div class="field">
               <label for="islem">İşlem Tipi *</label>
@@ -232,7 +232,7 @@
   </div>
 </footer>
 
-<script src="assets/form.js?v=1" defer></script>
+<script src="assets/form.js?v=2" defer></script>
 <script src="assets/olcum.js?v=1" defer></script>
 <script src="assets/site.js?v=2" defer></script>
 </body>
